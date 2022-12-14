@@ -1,5 +1,5 @@
 :root {
-  --green: #275149;
+  --green: #174e43;
 }
 
 @font-face {
@@ -9,18 +9,29 @@
   src: url('/fonts/NaNJaune-MidiBold.woff2') format('woff2');
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+* {
+  margin: 0;
+}
+
 body {
+  line-height: 1.25;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   color: white;
   background: var(--green);
   font-family: 'NaN Jaune';
-  margin: 0;
-  text-rendering: geometricPrecision;
-  --webkit-font-smoothing: antialiased;
-  line-height: 1.5;
+}
+
+a,
+button {
+  touch-action: manipulation;
 }
 
 a {
