@@ -1,5 +1,4 @@
 {
-  "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "baseUrl": ".",
     "strict": false,
@@ -7,7 +6,9 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@lib/*": ["src/lib/*"],
       "@styles/*": ["src/styles/*"]
-    }
+    },
+    "exclude": ["node_modules", "dist"]
   }
 }
