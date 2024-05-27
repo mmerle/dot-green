@@ -1,0 +1,38 @@
+---
+import Navigation from "./navigation.astro";
+import ThemeSwitcher from "./theme-switcher.astro";
+
+const currentSlug = Astro.url.pathname.replace(/^\//, "");
+---
+
+<header class="head">
+  <div>
+    <div class="title">
+      <h1>Mallard Green</h1>
+      <span>/</span>
+      <span>{currentSlug}</span>
+    </div>
+    <Navigation />
+  </div>
+  <ThemeSwitcher />
+</header>
+
+<style>
+  .head {
+    padding: var(--grid-margin);
+    font: 500 normal clamp(16px, 1.52vw, 300px) / normal "Neue Montreal";
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title {
+    display: inline-flex;
+    align-items: center;
+    /* gap: 8px; */
+
+    & > * {
+      all: unset;
+      display: revert;
+    }
+  }
+</style>
