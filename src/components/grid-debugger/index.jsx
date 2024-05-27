@@ -2,9 +2,9 @@ import { useLayoutEffect, useMemo, useCallback } from 'react';
 import { useWindowSize } from '@hooks/use-window-size';
 import useStore from '@libs/store';
 import cn from 'clsx';
-import s from './grid-overlay.module.css';
+import s from './grid-debugger.module.css';
 
-export default function GridOverlay() {
+export default function GridDebugger() {
   const { isGridOverlayVisible, toggleGridOverlayVisibility } = useStore();
   const { width: windowWidth, height: windowHeight } = useWindowSize();
 
@@ -46,7 +46,7 @@ export default function GridOverlay() {
   );
 }
 
-export function GridOverlayToggle({ children, className }) {
+export function GridDebuggerToggle({ children, className }) {
   const { toggleGridOverlayVisibility } = useStore();
 
   return (
