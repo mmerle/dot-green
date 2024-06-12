@@ -138,7 +138,7 @@
 body {
   font-family: var(--font-body);
   min-height: 100vh;
-  min-height: calc(var(--dvh, 1vh) * 100);
+  min-height: calc(var(--vh, 1vh) * 100);
   color: var(--white);
   background: var(--green);
   font: 400 normal clamp(16px, 1.11vw, 21px) / normal var(--font-heading);

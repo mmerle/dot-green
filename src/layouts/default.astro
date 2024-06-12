@@ -5,6 +5,7 @@ import "@styles/utils.css";
 import Header from "@components/header.astro";
 import Footer from "@components/footer.astro";
 import GridDebugger from "@components/grid-debugger/index.jsx";
+import BizCard from "@components/biz-card/index.jsx";
 ---
 
 <html lang="en-CA">
@@ -24,6 +25,7 @@ import GridDebugger from "@components/grid-debugger/index.jsx";
     <div id="app">
       <Header />
       <main>
+        <BizCard client:only="react" />
         <slot />
       </main>
       <Footer />
@@ -35,7 +37,7 @@ import GridDebugger from "@components/grid-debugger/index.jsx";
   #app {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    min-height: calc(var(--dvh, 1vh) * 100);
+    min-height: calc(var(--vh, 1vh) * 100);
     isolation: isolate;
   }
 
@@ -50,18 +52,9 @@ import GridDebugger from "@components/grid-debugger/index.jsx";
   // viewport
   function onWindowResize() {
     document.documentElement.style.setProperty(
-      "--vw",
-      window.innerWidth * 0.01 + "px",
-    );
-    document.documentElement.style.setProperty(
-      "--dvh",
-      window.innerHeight * 0.01 + "px",
-    );
-    document.documentElement.style.setProperty(
-      "--svh",
+      "--vh",
       document.documentElement.clientHeight * 0.01 + "px",
     );
-    document.documentElement.style.setProperty("--lvh", "1vh");
   }
 
   window.addEventListener("resize", onWindowResize);
@@ -74,7 +67,7 @@ import GridDebugger from "@components/grid-debugger/index.jsx";
   // lenis
   import Lenis from "lenis";
   const lenis = new Lenis({
-    lerp: 0.07,
+    lerp: 0.1,
   });
 
   function onRaf(time) {

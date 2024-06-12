@@ -1,10 +1,13 @@
 ---
 import Link from "./link.astro";
+import { BizCardToggle } from "./biz-card/index.jsx";
 
 const LINKS = [
-  { href: "/", label: "home" },
-  { href: "/r3f", label: "r3f" },
-  { href: "/forms", label: "forms" },
+  { href: "/info", label: "Info" },
+  // { href: "/contact", label: "contact" },
+  // { href: "/", label: "home" },
+  // { href: "/r3f", label: "r3f" },
+  // { href: "/forms", label: "forms" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -21,6 +24,8 @@ const currentPath = Astro.url.pathname;
         </li>
       ))
     }
+
+    <BizCardToggle client:load className="link">Contact</BizCardToggle>
   </ul>
 </nav>
 
@@ -33,22 +38,11 @@ const currentPath = Astro.url.pathname;
   .list {
     display: flex;
     flex-direction: column;
-    padding-left: 24px;
 
     &-item {
       position: relative;
       display: inline-flex;
       align-items: center;
-
-      &.active::before {
-        --size: 10px;
-        content: "";
-        height: var(--size);
-        width: var(--size);
-        background: var(--fg);
-        position: absolute;
-        left: -16px;
-      }
     }
   }
 </style>
