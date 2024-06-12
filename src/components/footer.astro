@@ -1,15 +1,25 @@
 ---
 import { GridDebuggerToggle } from "@components/grid-debugger/index.jsx";
+
 const LINKS = [
   {
-    href: "https://github.com/mmerle/stella/generate",
-    label: "Use this template",
+    href: "#",
+    label: "Instagram",
   },
   {
-    href: "https://github.com/mmerle/stella/",
-    label: "GitHub",
+    href: "#",
+    label: "Linkedin",
+  },
+  {
+    href: "#",
+    label: "Github",
   },
 ];
+
+const currentDate = new Date();
+const year = currentDate.getFullYear();
+// const month = String(currentDate.getMonth() + 1).padStart(2, '0');
+// const day = String(currentDate.getDate()).padStart(2, '0');
 ---
 
 <footer class="footer">
@@ -31,6 +41,7 @@ const LINKS = [
         </>
       ))
     }
+    <p>© Mallard Green — {year}</p>
   </div>
 </footer>
 
